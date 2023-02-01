@@ -69,19 +69,19 @@ if [ "$1" = 'boot' ]; then
     "$oscheck"/gaster pwn
     sleep 1
     "$oscheck"/gaster reset
-    sleep 1
+    sleep 10
     "$oscheck"/irecovery -f sshramdisk/iBSS.img4
     sleep 2
     "$oscheck"/irecovery -f sshramdisk/iBEC.img4
     if [ "$check" = '0x8010' ] || [ "$check" = '0x8015' ] || [ "$check" = '0x8011' ] || [ "$check" = '0x8012' ]; then
-        sleep 1
+        sleep 7
         "$oscheck"/irecovery -c go
     fi
-    sleep 1
+    sleep 7
     "$oscheck"/irecovery -f sshramdisk/bootlogo.img4
-    sleep 1
+    sleep 7
     "$oscheck"/irecovery -c "setpicture 0x1"
-    sleep 1
+    sleep 7
     "$oscheck"/irecovery -f sshramdisk/ramdisk.img4
     sleep 1
     "$oscheck"/irecovery -c ramdisk
